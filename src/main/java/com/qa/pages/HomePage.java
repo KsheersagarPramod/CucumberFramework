@@ -20,6 +20,7 @@ public class HomePage extends PageObjectClass  {
 	HomePage home;
 	LoginPage login;
 	PageObjectClass pages;
+	NewContactPage newcontactPage;
 		 
 
 	public HomePage(WebDriver driver) throws IOException {
@@ -29,6 +30,7 @@ public class HomePage extends PageObjectClass  {
 		pages=new PageObjectClass();
 		this.driver=driver;
 		login=pages.getLoginPage();
+		newcontactPage=new  NewContactPage(driver);
 		
 		
 		
@@ -73,9 +75,10 @@ public class HomePage extends PageObjectClass  {
 	}
 	
 	
-	public void clickonContactIcon()
+	public NewContactPage clickonContactIcon() throws IOException
 	{
 		contactIcon.click();
+		return new  NewContactPage(driver);
 	}
 	public HomePage loginToHomePage(String username,String password) throws IOException
 	{

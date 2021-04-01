@@ -46,9 +46,10 @@ public class ContactPage extends Testbase {
 	}
 	
 	
-	public void clickOnContactButton()
+	public NewContactPage clickOnContactButton() throws IOException
 	{
 		contactButton.click();
+		return new NewContactPage(driver);
 	}
 	public void clickOnnewButton()
 	{
